@@ -31,9 +31,9 @@ public class PracticeFormTests {
 
 
             $("#dateOfBirthInput").click();
-            $(".react-datepicker__year-select").selectOption("2008");
+            $(".react-datepicker__year-select").selectOption("2015");
             $(".react-datepicker__month-select").selectOption("March");
-            $$("div.react-datepicker__day").findBy(text("21")).click();
+            $$("div.react-datepicker__day").findBy(text("4")).click();
 
 
             $("#subjectsInput").setValue("Arts").pressEnter();
@@ -53,7 +53,7 @@ public class PracticeFormTests {
             $$("table tr").findBy(text("Student Email")).shouldHave(text("alex@morozov.com"));
             $$("table tr").findBy(text("Gender")).shouldHave(text("Male"));
             $$("table tr").findBy(text("Mobile")).shouldHave(text("3456789876"));
-            $$("table tr").findBy(text("Date of Birth")).shouldHave(text("21 March,2008"));
+            $$("table tr").findBy(text("Date of Birth")).shouldHave(text("04 March,2015"));
             $$("table tr").findBy(text("Subjects")).shouldHave(text("Arts"));
             $$("table tr").findBy(text("Hobbies")).shouldHave(text("Reading"));
             $$("table tr").findBy(text("Picture")).shouldHave(text("img.png"));
