@@ -1,3 +1,5 @@
+package tests;
+
 import org.junit.jupiter.api.*;
 
 public class SimpleJUnitTest {
@@ -23,7 +25,7 @@ public class SimpleJUnitTest {
 
     @AfterAll
     static void afterAll(){
-        System.out.println("\n###  afterAll\n");
+        System.out.println("\n###  afterAll \n");
     }
 
     @Test
