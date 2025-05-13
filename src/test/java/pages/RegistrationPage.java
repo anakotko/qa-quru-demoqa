@@ -17,7 +17,7 @@ public class RegistrationPage {
             userNumberInput = $("#userNumber"),
             calendarInput = $("dateOfBirthInput"),
             subjectsInput = $("#subjectsInput"),
-            subjectsCheckBox = $("[for=hobbies-checkbox-2]"),
+            hobbiesCheckBox = $("[for=hobbies-checkbox-2]"),
             pictureButton = $("#uploadPicture"),
             addressInput = $("#currentAddress"),
             selectState = $("#state"),
@@ -76,7 +76,13 @@ public class RegistrationPage {
 
     public RegistrationPage setSubjects(String value){
         subjectsInput.setValue(value).pressEnter();
-        subjectsCheckBox.click();
+
+        return this;
+
+    }
+    
+    public RegistrationPage setHobbies(){
+        hobbiesCheckBox.click();
 
         return this;
 
