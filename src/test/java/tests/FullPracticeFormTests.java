@@ -3,38 +3,54 @@ package tests;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
+import static utils.RandomUtils.*;
 
 public class FullPracticeFormTests extends TestBase {
+
+    String firstName = getRandomFirstName();
+    String lastName = getRandomLastName();
+    String email = getRandomEmail();
+    String gender = getRandomGender();
+    String userNumber = getRandomNumberPhone();
+    String birthDay = getRandomBirthDay();
+    String birthMonth = getRandomBirthMonth();
+    String birthYear = getRandomBirthYear();
+    String subject = getRandomSubject();
+    String address = getRandomAddress();
+    String state = getRandomState();
+    String city = getRandomCity(state);
+
 
     RegistrationPage registrationPage = new RegistrationPage();
 
         @Test
         void studentRegistrationFormTests() {
             registrationPage.openPage()
-                    .setFirstName("Alex")
-                    .setLastName("Morozov")
-                    .setEmail("alex@morozov.com")
-                    .setGender("Male")
-                    .setUserNumber("3456789876")
-                    .setDateOfBirth("4", "March", "2015")
-                    .setSubjects("Arts")
+                    .setFirstName(firstName)
+                    .setLastName(lastName)
+                    .setEmail(email)
+                    .setGender(gender)
+                    .setUserNumber(userNumber)
+                    .setDateOfBirth(birthDay, birthMonth, birthYear)
+                    .setSubjects(subject)
+                    .setHobbies()
                     .setPicture()
-                    .setAddress("Some street 1 ")
-                    .setState("Haryana")
-                    .setCity("Panipat")
+                    .setAddress(address)
+                    .setState(state)
+                    .setCity(city)
                     .clickSubmitBtn();
 
             registrationPage.checkResult("Label", "Values")
-                            .checkResult("Student Name", "Alex Morozov")
-                            .checkResult("Student Email", "alex@morozov.com")
-                            .checkResult("Gender", "Male")
-                            .checkResult("Mobile", "3456789876")
-                            .checkResult("Date of Birth", "04 March,2015")
-                            .checkResult("Subjects", "Arts")
+                            .checkResult("Student Name", firstName + " " + lastName)
+                            .checkResult("Student Email", email)
+                            .checkResult("Gender", gender)
+                            .checkResult("Mobile", userNumber)
+                            .checkResult("Date of Birth", birthDay + " " + birthMonth + "," + birthYear)
+                            .checkResult("Subjects", subject)
                             .checkResult("Hobbies", "Reading")
                             .checkResult("Picture", "img.png")
-                            .checkResult("Address", "Some street 1")
-                            .checkResult("State and City", "Haryana Panipat");
+                            .checkResult("Address", address)
+                            .checkResult("State and City", state + " " + city);
 
         }
     }
