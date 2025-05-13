@@ -18,6 +18,7 @@ public class FullPracticeFormTests extends TestBase {
                     .setUserNumber("3456789876")
                     .setDateOfBirth("4", "March", "2015")
                     .setSubjects("Arts")
+                    .setHobbies()
                     .setPicture()
                     .setAddress("Some street 1 ")
                     .setState("Haryana")
