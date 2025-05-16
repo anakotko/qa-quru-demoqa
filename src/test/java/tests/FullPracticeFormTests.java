@@ -16,7 +16,7 @@ public class FullPracticeFormTests extends TestBase {
                     .setEmail("alex@morozov.com")
                     .setGender("Male")
                     .setUserNumber("3456789876")
-                    .setDateOfBirth("4", "March", "2015")
+                    .setDateOfBirth("04", "March", "2015")
                     .setSubjects("Arts")
                     .setHobbies()
                     .setPicture()
