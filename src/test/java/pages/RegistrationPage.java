@@ -80,7 +80,7 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage setHobbies(){
+    public RegistrationPage setHobbies(String value){
         hobbiesCheckBox.click();
 
         return this;

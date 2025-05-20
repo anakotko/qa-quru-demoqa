@@ -16,6 +16,7 @@ public class FullPracticeFormTests extends TestBase {
     String birthMonth = getRandomBirthMonth();
     String birthYear = getRandomBirthYear();
     String subject = getRandomSubject();
+    String hobbies = getRandomHobby();
     String address = getRandomAddress();
     String state = getRandomState();
     String city = getRandomCity(state);
@@ -33,7 +34,7 @@ public class FullPracticeFormTests extends TestBase {
                     .setUserNumber(userNumber)
                     .setDateOfBirth(birthDay, birthMonth, birthYear)
                     .setSubjects(subject)
-                    .setHobbies()
+                    .setHobbies(hobbies)
                     .setPicture()
                     .setAddress(address)
                     .setState(state)
@@ -47,7 +48,7 @@ public class FullPracticeFormTests extends TestBase {
                             .checkResult("Mobile", userNumber)
                             .checkResult("Date of Birth", birthDay + " " + birthMonth + "," + birthYear)
                             .checkResult("Subjects", subject)
-                            .checkResult("Hobbies", "Reading")
+                            .checkResult("Hobbies", hobbies)
                             .checkResult("Picture", "img.png")
                             .checkResult("Address", address)
                             .checkResult("State and City", state + " " + city);

@@ -47,6 +47,11 @@ public class RandomUtils {
                 "Biology", "History", "Economics", "Computer Science");
     }
 
+    public static String getRandomHobby() {
+
+        return faker.options().option("Sports", "Reading", "Music");
+    }
+
     public static String getRandomAddress(){
         return faker.address().streetAddress();
     }
