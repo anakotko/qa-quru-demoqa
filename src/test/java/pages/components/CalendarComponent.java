@@ -1,12 +1,17 @@
 package pages.components;
 
 import static com.codeborne.selenide.Condition.text;
+import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Selenide.*;
 
 public class CalendarComponent {
+
+    private final SelenideElement calendarMonthSelect = $(".react-datepicker__month-select");
+    private final SelenideElement calendarYearSelect = $(".react-datepicker__year-select");
+    
     public void setDate(String day, String month, String year) {
-        $(".react-datepicker__year-select").selectOption("2015");
-        $(".react-datepicker__month-select").selectOption("March");
-        $$("div.react-datepicker__day").findBy(text("4")).click();
+        calendarMonthSelect.selectOption(month);
+        calendarYearSelect.selectOption(year);
+        $(".react-datepicker__day--0" + day + ":not(.react-datepicker__day--outside-month)").click();
     }
 }

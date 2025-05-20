@@ -27,6 +27,7 @@ public class FullPracticeFormTests extends TestBase {
         @Test
         void studentRegistrationFormTests() {
             registrationPage.openPage()
+
                     .setFirstName(firstName)
                     .setLastName(lastName)
                     .setEmail(email)
