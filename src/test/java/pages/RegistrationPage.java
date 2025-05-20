@@ -78,11 +78,10 @@ public class RegistrationPage {
         subjectsInput.setValue(value).pressEnter();
 
         return this;
-
     }
-    
-    public RegistrationPage setHobbies(){
-        hobbiesCheckBox.click();
+
+    public RegistrationPage setHobbies(String value){
+        hobbiesCheckBox.setValue(value).click();
 
         return this;
 
