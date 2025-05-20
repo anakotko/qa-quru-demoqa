@@ -3,10 +3,9 @@ package utils;
 import com.github.javafaker.Faker;
 
 import java.util.Locale;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class RandomUtils {
-    private static Faker faker = new Faker(new Locale("ru"));
+    private static final Faker faker = new Faker(new Locale("ru"));
 
     public static String getRandomFirstName(){
         return faker.name().firstName();
