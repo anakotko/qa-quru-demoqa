@@ -81,7 +81,7 @@ public class RegistrationPage {
     }
 
     public RegistrationPage setHobbies(String value){
-        hobbiesCheckBox.click();
+        hobbiesCheckBox.setValue(value).click();
 
         return this;
 
