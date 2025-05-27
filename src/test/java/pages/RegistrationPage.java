@@ -18,7 +18,7 @@ public class RegistrationPage {
             userNumberInput = $("#userNumber"),
             calendarInput = $("#dateOfBirthInput"),
             subjectsInput = $("#subjectsInput"),
-            hobbiesCheckBox = $("#label[for=hobbies-checkbox-2]"),
+            hobbiesCheckBox = $("#hobbiesWrapper"),
             pictureButton = $("#uploadPicture"),
             addressInput = $("#currentAddress"),
             selectState = $("#state"),
@@ -91,7 +91,7 @@ public class RegistrationPage {
 
     @Step("Выбираем хобби")
     public RegistrationPage setHobbies(String value){
-        hobbiesCheckBox.setValue(value).click();
+        hobbiesCheckBox.scrollIntoView(true).$(byText(value)).click();
 
         return this;
 
