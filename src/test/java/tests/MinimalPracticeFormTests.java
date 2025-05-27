@@ -4,15 +4,13 @@ import org.junit.jupiter.api.DisplayName;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
-
-@DisplayName("Успешная отправка формы регистрации с обязательными полями")
 import static utils.RandomUtils.*;
 import static utils.RandomUtils.getRandomNumberPhone;
 
+@DisplayName("Успешная отправка формы регистрации с обязательными полями")
 public class MinimalPracticeFormTests extends TestBase{
 
     String firstName = getRandomFirstName();
