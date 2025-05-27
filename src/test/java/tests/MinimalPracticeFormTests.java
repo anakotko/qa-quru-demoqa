@@ -1,27 +1,44 @@
 package tests;
 
 import org.junit.jupiter.api.DisplayName;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Story;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
 @DisplayName("Успешная отправка формы регистрации с обязательными полями")
+import static utils.RandomUtils.*;
+import static utils.RandomUtils.getRandomNumberPhone;
+
 public class MinimalPracticeFormTests extends TestBase{
 
+    String firstName = getRandomFirstName();
+    String lastName = getRandomLastName();
+    String gender = getRandomGender();
+    String userNumber = getRandomNumberPhone();
     RegistrationPage registrationPage = new RegistrationPage();
 
+    @Tag("submit_form")
+    @Feature("Форма регистрации студента")
+    @Story("Успешная отправка формы")
+    @Owner("kotko-an")
+    @DisplayName("Успешная отправка формы регистрации с обязательными полями")
     @Test
     void studentRegistrationFormTests() {
 
         registrationPage.openPage()
-                .setFirstName("Alex")
-                .setLastName("Morozov")
-                .setGender("Male")
-                .setUserNumber("3456789876")
+                .setFirstName(firstName)
+                .setLastName(lastName)
+                .setGender(gender)
+                .setUserNumber(userNumber)
                 .clickSubmitBtn();
 
         registrationPage.checkResult("Label", "Values")
-                .checkResult("Student Name", "Alex Morozov")
-                .checkResult("Gender", "Male")
-                .checkResult("Mobile", "3456789876");
+                .checkResult("Student Name", firstName + " " + lastName)
+                .checkResult("Gender", gender)
+                .checkResult("Mobile", userNumber);
     }
 }
