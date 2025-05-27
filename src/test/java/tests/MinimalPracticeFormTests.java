@@ -1,5 +1,10 @@
 package tests;
 
+import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Story;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
@@ -14,6 +19,11 @@ public class MinimalPracticeFormTests extends TestBase{
     String userNumber = getRandomNumberPhone();
     RegistrationPage registrationPage = new RegistrationPage();
 
+    @Tag("submit_form")
+    @Feature("Форма регистрации студента")
+    @Story("Успешная отправка формы")
+    @Owner("kotko-an")
+    @DisplayName("Успешная отправка формы регистрации с обязательными полями")
     @Test
     void studentRegistrationFormTests() {
 
