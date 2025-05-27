@@ -129,7 +129,7 @@ public class RegistrationPage {
 
     @Step("Отправляем форму")
     public void clickSubmitBtn() {
-        submitBtn.click();
+        submitBtn.scrollIntoView(true).click();
     }
 
     @Step("Проверка таблицы")
