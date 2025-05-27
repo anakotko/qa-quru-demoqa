@@ -1,9 +1,11 @@
 package tests;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
 
+@DisplayName("Успешная отправка формы регистрации со всеми заполненными полями")
 public class FullPracticeFormTests extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();

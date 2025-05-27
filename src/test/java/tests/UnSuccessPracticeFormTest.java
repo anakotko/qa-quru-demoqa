@@ -1,8 +1,10 @@
 package tests;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
+@DisplayName("Неуспешная отправка формы регистрации с обязательными полями")
 public class UnSuccessPracticeFormTest extends TestBase{
 
     RegistrationPage registrationPage = new RegistrationPage();
