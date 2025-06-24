@@ -14,8 +14,14 @@ public class TestBase {
 
     @BeforeAll
     static void setupConfig(){
-        Configuration.browserSize = "1920x1080";
-        Configuration.baseUrl = "https://demoqa.com";
+//        Configuration.browserSize = "1920x1080";
+//        Configuration.baseUrl = "https://demoqa.com";
+        String browser = System.getProperty("browser", "chrome");
+        String version = System.getProperty("version", "101");
+        String windowSize = System.getProperty("windowSize", "1920x1080");
+        System.out.println(browser);
+        System.out.println(version);
+        System.out.println(windowSize);
         Configuration.pageLoadStrategy = "eager";
         Configuration.timeout = 5000;
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
