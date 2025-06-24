@@ -14,17 +14,16 @@ public class TestBase {
 
     @BeforeAll
     static void setupConfig(){
-//        Configuration.browserSize = "1920x1080";
-//        Configuration.baseUrl = "https://demoqa.com";
-        String browser = System.getProperty("browser", "chrome");
-        String version = System.getProperty("version", "101");
-        String windowSize = System.getProperty("windowSize", "1920x1080");
-        System.out.println(browser);
-        System.out.println(version);
-        System.out.println(windowSize);
+        Configuration.browser = System.getProperty("browser", "chrome");
+        Configuration.browserVersion = System.getProperty("browser.version", "128.0");
+        Configuration.browserSize = System.getProperty("browser.size", "1920x1080");
+        Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
-        Configuration.timeout = 5000;
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        String SELENOID_URL = System.getProperty("selenoid.url");
+        String SELENOID_LOGIN = System.getProperty("selenoid.login");;
+        String SELENOID_PASSWORD = System.getProperty("selenoid.password");
+        Configuration.remote = "https://" + SELENOID_LOGIN + ":" + SELENOID_PASSWORD + "@" + SELENOID_URL + "/wd/hub";
+//        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
