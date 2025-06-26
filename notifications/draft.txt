@@ -1,5 +1,0 @@
-7575151558:AAFOiMq3EO2wN-YjdYGFh7emBnwj2GwmTlk
-
-https://api.telegram.org/bot7575151558:AAFOiMq3EO2wN-YjdYGFh7emBnwj2GwmTlk/getUpdates
-
--1002836453994
